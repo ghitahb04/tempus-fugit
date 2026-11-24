@@ -1,0 +1,527 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2b1b16">
+  <title>Tempus Fugit — For Gabe</title>
+  <meta name="description" content="A little birthday keepsake, made for Gabe.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .memento-section {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .skull-reminders {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      place-items: center;
+      padding: 2rem 5%;
+      color: #d18b6a;
+      opacity: 0.10;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .skull-reminders span {
+      font-size: clamp(1.5rem, 3vw, 2.6rem);
+      transform: rotate(-12deg);
+    }
+
+    .skull-reminders span:nth-child(even) {
+      transform: rotate(12deg) scale(.82);
+    }
+
+    .skull-reminders span:nth-child(3n) {
+      opacity: .65;
+      transform: rotate(5deg) scale(1.15);
+    }
+
+    .memento-content,
+    .memento-section > .section-kicker,
+    .memento-foot {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="monogram" href="#home" aria-label="Back to beginning">V<span>×</span>G</a>
+
+    <span class="top-note">A SMALL KEEPSAKE · MADE WITH AFFECTION</span>
+
+    <audio id="bgMusic" loop preload="none">
+      <source src="Apocalypse - Cigarettes After Sex.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="sound-toggle" id="soundToggle" type="button" aria-label="Play or pause the song">
+      ♪ <span>play our song</span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="sun"></div>
+
+      <div class="hero-architecture" aria-hidden="true">
+        <div class="building building-left"><i></i><i></i><i></i></div>
+        <div class="building building-right"><i></i><i></i><i></i></div>
+        <div class="arch">
+          <div class="arch-opening"></div>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <p class="eyebrow">FOR THE MAN WHO BUILDS THINGS</p>
+
+        <h1>Tempus<br><em>Fugit.</em></h1>
+
+        <p class="hero-sub">
+          But some moments deserve<br>
+          to be kept a little longer.
+        </p>
+
+        <button class="round-link" id="beginButton" type="button">
+          A little something for you <span>↓</span>
+        </button>
+      </div>
+
+      <p class="vertical-note">REMEMBER TO LIVE · REMEMBER TO LAUGH</p>
+
+      <div class="hero-foot">
+        <span>01 — A NOTE FOR YOU</span>
+        <span>SCROLL TO EXPLORE</span>
+      </div>
+    </section>
+
+
+    <!-- LETTER -->
+    <section class="letter-section section-pad" id="letter">
+      <div class="section-kicker">I. &nbsp; A NOTE, FROM VIPER</div>
+
+      <div class="letter-layout">
+        <div class="letter-intro">
+          <p class="small-label">A birthday, apparently.</p>
+
+          <h2>Well, look<br>at <em>you.</em></h2>
+
+          <p class="muted">
+            Another year older. Try not to let it go to your head.
+          </p>
+
+          <div class="wax-seal">V</div>
+        </div>
+
+        <article class="letter-card">
+          <div class="letter-top">
+            <span>TO GABE</span>
+            <span>WITH AFFECTION, OBVIOUSLY</span>
+          </div>
+
+          <div class="letter-copy">
+            <p>My dear Gabe,</p>
+
+            <p>
+              Happy birthday. I hope this next chapter brings you beautiful
+              places, impossible ideas that somehow become real, good food,
+              long evenings, and plenty of reasons to smile.
+            </p>
+
+            <p>
+              There's something rather lovely about the way you see the world
+              — as if there's always another detail worth noticing, another
+              line worth drawing, another story hidden in the things everyone
+              else walks past.
+            </p>
+
+            <p>
+              I hope you never lose that. And I hope, among all the things you
+              make and all the places you go, you remember to make a little
+              room for yourself, too.
+            </p>
+
+            <p>
+              I'm very glad our paths crossed. Don't make me repeat that;
+              it was embarrassing enough the first time.
+            </p>
+
+            <p class="signoff">
+              Yours (unfortunately for you),<br>
+              <em>Viper</em> ♡
+            </p>
+          </div>
+
+          <div class="letter-bottom">SOME THINGS ARE WORTH KEEPING.</div>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- ARCHITECT -->
+    <section class="architect-section section-pad" id="architect">
+      <div class="section-kicker">II. &nbsp; THE ART OF MAKING</div>
+
+      <div class="architect-grid">
+        <div class="blueprint" aria-label="Decorative architectural drawing">
+          <div class="blueprint-label">
+            STUDY Nº 024 · AN EXERCISE IN ADMIRATION
+          </div>
+
+          <svg viewBox="0 0 520 500" role="img" aria-label="Line drawing of a classical arch and columns">
+            <g fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M70 430V190 Q70 60 260 60 Q450 60 450 190V430"/>
+              <path d="M100 430V190 Q100 90 260 90 Q420 90 420 190V430"/>
+              <path d="M70 190H100 M420 190H450 M70 430H450"/>
+              <path d="M130 430V205 M170 430V205 M350 430V205 M390 430V205"/>
+              <path d="M120 205H180 M340 205H400 M120 220H180 M340 220H400"/>
+              <path d="M115 430H185 M335 430H405 M110 445H190 M330 445H410"/>
+              <path d="M260 60V20 M250 20H270 M260 90V470 M50 190H470"/>
+              <path d="M70 460H450 M70 455V465 M450 455V465"/>
+              <path d="M35 60V430 M30 60H40 M30 430H40"/>
+              <path d="M70 190L100 205 M450 190L420 205"/>
+              <path d="M200 430V270 Q200 220 260 220 Q320 220 320 270V430"/>
+            </g>
+
+            <g fill="currentColor" font-family="serif" font-size="10" letter-spacing="2">
+              <text x="260" y="490" text-anchor="middle">
+                A STUDY OF FORM &amp; LIGHT
+              </text>
+              <text x="20" y="250" transform="rotate(-90 20 250)">
+                ELEVATION
+              </text>
+            </g>
+          </svg>
+
+          <div class="blueprint-coordinates">37°23' N &nbsp; 5°59' W</div>
+        </div>
+
+        <div class="architect-copy">
+          <p class="small-label">A THOUGHT ABOUT YOU</p>
+
+          <h2>A mind that<br><em>builds.</em></h2>
+
+          <p>
+            There's a particular kind of magic in taking an idea that exists
+            only in your head and giving it somewhere to live.
+          </p>
+
+          <p>
+            I admire the patience it takes to notice proportions, the
+            imagination it takes to see what isn't there yet, and the
+            stubbornness required to bring it all into being.
+          </p>
+
+          <p class="highlight-line">
+            May you always have something wonderful to imagine.
+          </p>
+
+          <button
+            class="text-button"
+            type="button"
+            data-message="And please remember to take breaks between designing the world. It would be terribly inconvenient if my favourite architect forgot to eat."
+          >
+            A professional reminder ↗
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- MEMENTO MORI -->
+    <section class="memento-section section-pad" id="memento">
+
+      <div class="skull-reminders" aria-hidden="true">
+        <span>☠</span><span>☠</span><span>☠</span><span>☠</span>
+        <span>☠</span><span>☠</span><span>☠</span><span>☠</span>
+        <span>☠</span><span>☠</span><span>☠</span><span>☠</span>
+      </div>
+
+      <div class="memento-orb"></div>
+
+      <div class="section-kicker">III. &nbsp; MEMENTO MORI</div>
+
+      <div class="memento-content">
+        <p class="small-label">REMEMBER THAT YOU ARE HERE</p>
+
+        <h2>Remember<br><em>to live.</em></h2>
+
+        <p class="memento-quote">
+          “Time is fleeting. That is not a reason to fear it, but a reason
+          to fill it with things that matter.”
+        </p>
+
+        <p class="memento-body">
+          A little reminder for the year ahead: take the scenic route.
+          Stay for the sunset. Make things for the joy of making them.
+          Tell people when they matter to you. Collect moments, not just
+          milestones.
+        </p>
+
+        <button
+          class="hourglass-button"
+          id="hourglassButton"
+          type="button"
+          aria-label="Turn the hourglass for a hidden message"
+        >
+          <span class="hourglass">⌛</span>
+          <span>TURN THE HOURGLASS</span>
+        </button>
+
+        <p class="hidden-hourglass" id="hourglassMessage" aria-live="polite">
+          And, selfishly, I hope some of those moments have me in them. ♡
+        </p>
+      </div>
+
+      <div class="memento-foot">
+        MEMENTO VIVERE — REMEMBER TO LIVE
+      </div>
+    </section>
+
+
+    <!-- LITTLE THINGS -->
+    <section class="little-things-section section-pad" id="little-things">
+      <div class="section-kicker">IV. &nbsp; SMALL OBSERVATIONS</div>
+
+      <div class="center-heading">
+        <p class="small-label">A FEW THINGS I HOPE YOU KNOW</p>
+
+        <h2>Little things.<br><em>Rather big deal.</em></h2>
+
+        <p class="muted">
+          Tap a card. Go on, indulge your curiosity.
+        </p>
+      </div>
+
+      <div class="memory-grid">
+        <button
+          class="memory-card"
+          type="button"
+          data-message="You make even ordinary conversations feel like somewhere I want to stay."
+        >
+          01 <span>YOUR COMPANY</span><b>↗</b>
+        </button>
+
+        <button
+          class="memory-card"
+          type="button"
+          data-message="You have a way of noticing details. I hope you know that being noticed by you feels lovely."
+        >
+          02 <span>YOUR WAY OF SEEING</span><b>↗</b>
+        </button>
+
+        <button
+          class="memory-card"
+          type="button"
+          data-message="Your softness is not a flaw to hide. It is one of the things that makes you you."
+        >
+          03 <span>YOUR HEART</span><b>↗</b>
+        </button>
+
+        <button
+          class="memory-card"
+          type="button"
+          data-message="And yes, I do like you. Quite a lot, actually. Don't look so pleased with yourself."
+        >
+          04 <span>THE OBVIOUS ONE</span><b>↗</b>
+        </button>
+      </div>
+    </section>
+
+
+    <!-- FINAL SECTION -->
+    <section class="final-section" id="final">
+      <div class="final-sun"></div>
+
+      <div class="final-content">
+        <p class="small-label">V. &nbsp; ONE LAST THING</p>
+
+        <h2>Here's to<br><em>your next chapter.</em></h2>
+
+        <p>
+          May it be full of golden evenings, beautiful work, unexpected
+          adventures, and people who make the days feel brighter.
+        </p>
+
+        <p class="final-wish">Happy birthday, Gabe.</p>
+
+        <div class="final-actions">
+
+          <!-- YOUR SPOTIFY PLAYLIST -->
+          <a
+            class="outline-button"
+            href="https://open.spotify.com/playlist/25CyBxSFJAvrtbanPAkqAO?si=6adb1f7a5c7d4ac9"
+            id="playlistLink"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            A STUDY IN SUNSETS ↗
+          </a>
+
+          <button
+            class="outline-button"
+            id="finalNoteButton"
+            type="button"
+          >
+            ONE MORE THING ♡
+          </button>
+        </div>
+
+        <p class="final-hidden" id="finalHidden">
+          If time insists on flying, I hope it takes us somewhere lovely. — Viper
+        </p>
+      </div>
+
+      <footer>
+        <span>MADE FOR GABE</span>
+        <span>WITH A LITTLE HELP FROM VIPER</span>
+        <span>♡</span>
+      </footer>
+    </section>
+
+  </main>
+
+
+  <!-- MESSAGE POP-UP -->
+  <div
+    class="message-modal"
+    id="messageModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalText"
+    hidden
+  >
+    <div class="modal-backdrop" data-close></div>
+
+    <div class="modal-card">
+      <button
+        class="modal-close"
+        type="button"
+        aria-label="Close"
+        data-close
+      >
+        ×
+      </button>
+
+      <span class="modal-star">✳</span>
+
+      <p id="modalText"></p>
+
+      <span class="modal-signature">— V</span>
+    </div>
+  </div>
+
+
+  <!-- ALL JAVASCRIPT IS EMBEDDED BELOW -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // MUSIC PLAYER
+      const music = document.getElementById('bgMusic');
+      const soundButton = document.getElementById('soundToggle');
+
+      soundButton.addEventListener('click', async () => {
+        const label = soundButton.querySelector('span');
+
+        if (music.paused) {
+          try {
+            await music.play();
+            label.textContent = 'playing our song';
+          } catch (error) {
+            label.textContent = 'could not play — check audio file';
+          }
+        } else {
+          music.pause();
+          label.textContent = 'play our song';
+        }
+      });
+
+
+      // SCROLL TO LETTER
+      const beginButton = document.getElementById('beginButton');
+
+      beginButton.addEventListener('click', () => {
+        document.getElementById('letter').scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+
+
+      // INTERACTIVE MESSAGE CARDS AND MODAL
+      const modal = document.getElementById('messageModal');
+      const modalText = document.getElementById('modalText');
+
+      function openMessage(message) {
+        modalText.textContent = message;
+        modal.hidden = false;
+        document.body.classList.add('modal-open');
+      }
+
+      function closeMessage() {
+        modal.hidden = true;
+        document.body.classList.remove('modal-open');
+      }
+
+      document.querySelectorAll('[data-message]').forEach((button) => {
+        button.addEventListener('click', () => {
+          openMessage(button.getAttribute('data-message'));
+        });
+      });
+
+      modal.querySelectorAll('[data-close]').forEach((element) => {
+        element.addEventListener('click', closeMessage);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !modal.hidden) {
+          closeMessage();
+        }
+      });
+
+
+      // HOURGLASS HIDDEN MESSAGE
+      const hourglassButton = document.getElementById('hourglassButton');
+      const hourglassMessage = document.getElementById('hourglassMessage');
+
+      hourglassButton.addEventListener('click', () => {
+        hourglassMessage.classList.toggle('show');
+        hourglassButton.classList.toggle('turned');
+      });
+
+
+      // FINAL HIDDEN MESSAGE
+      const finalNoteButton = document.getElementById('finalNoteButton');
+      const finalHidden = document.getElementById('finalHidden');
+
+      finalNoteButton.addEventListener('click', () => {
+        finalHidden.classList.toggle('show');
+
+        finalNoteButton.textContent =
+          finalHidden.classList.contains('show')
+            ? 'THAT IS ALL ♡'
+            : 'ONE MORE THING ♡';
+      });
+
+    });
+  </script>
+
+</body>
+</html>
